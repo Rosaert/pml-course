@@ -11,9 +11,9 @@ Next, you'll need access to a Perspectives Repository in order to be able to upl
 In the assignment material, we assume you have MyContexts and access to a Repository.
 
 ## How to use this material
-Even while this repository is public, you are not encouraged to work in it directly. Instead, **fork** it and clone your fork on your computer. This setup allows you to keep up with new material in the main pml-course repository by syncing your fork with it. It also allows you to save your own work assignments in your fork. And finally, you can even suggest improvements by making pull requests.
+Even while this repository is public, you are not encouraged to work in it directly. Instead, **fork** it (you'll need a Github account for that) and clone your fork on your computer. This setup allows you to keep up with new material in the main pml-course repository by syncing your fork with it. It also allows you to save your own work assignments in your fork. And finally, you can even suggest improvements by making pull requests.
 
-1. Begin by __forking__ this repository on Github. 
+1. Begin by __forking__ this repository on Github (ask ChatGPT if you don't know how to do this). 
 2. Then, __clone__ it to your workstation.
 ```
 git clone https://github.com/your-username-on-github/pml-course.git
@@ -21,7 +21,8 @@ git clone https://github.com/your-username-on-github/pml-course.git
 3. In the `myownwork` directory, create the files as instructed in the assignments. You can submit this work to your forked repository.
 
 ### Keeping Your Fork Up to Date
-If new material is added to the main repository, you can sync your fork to get the updates. Follow these steps:
+If new material is added to the main repository, you can sync your fork to get the updates. This consists of two steps: first get the updates to your computer,
+then push them to your cloned github repository. Follow these steps:
 
 1. Open your terminal and navigate to the folder where your project is stored.
 
@@ -77,3 +78,5 @@ git push origin correction-branch
 ```
 
 4. Open a pull request to this repository on GitHub.
+
+Next, If the maintainer of pml-course accepts your pull request, he will merge them in the main repository. They will then be available as updates that you can fetch into your own repository as described above.
