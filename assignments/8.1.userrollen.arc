@@ -17,7 +17,11 @@ Zoals we contexten kunnen verbinden, zo kunnen we ook user rollen met elkaar ver
 maar in eerste instantie volgen we een andere, eenvoudiger weg.
 
 OPDRACHT
-Tik achter 'user Beheerder' de tekst '= sys:SocialMe'. Upload je bestand. Lees eventuele feedback. Ga naar de volgende opdracht.
+1. Tik achter 'user Beheerder' de tekst '= sys:SocialMe'. 
+2. Doe hetzelfde voor Boodschapper.
+3. Verwijder de Naam property van Boodschapper (de reden daarvoor leggen we hier niet uit; dat komt later).
+
+Upload je bestand. Lees eventuele feedback. Ga naar de volgende opdracht.
 -}
 
 -------------------------------------------------------------------------------

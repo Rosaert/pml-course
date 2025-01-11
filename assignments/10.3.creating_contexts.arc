@@ -1,3 +1,22 @@
+{-
+Je kunt nu een Boodschappenlijst maken en openen. Maar in Boodschappenlijst speelt hetzelfde probleem als we 
+in BoodschappenlijstenBeheer tegenkwamen: de rol Boodschappen is functioneel, terwijl we meerdere boodschappen willen kunnen toevoegen.
+
+OPDRACHT
+Vervander de rol 'Boodschappen' in een 'relationele' rol.
+
+Compileer het model, actualiseer het in gebruik genomen model en maak nu in een Boodschappenlijst twee Boodschappen aan: brood en melk.
+
+OPDRACHT
+De eerste instanties van de rol Boodschappen in BoodschappenlijstenBeheer zijn niet gevuld met een context. 
+Je hebt er niets aan. Verwijder ze (selecteer en klik op de backspace toets).
+
+-}
+
+
+-------------------------------------------------------------------------------
+-- MODEL TOT NOG TOE
+-------------------------------------------------------------------------------
 -- Firstname Lastname. mm/dd/yyyy.
 domain model://joopringelberg.nl#Boodschappenlijst
   use bl for model://joopringelberg.nl#Boodschappenlijst
@@ -30,7 +49,7 @@ domain model://joopringelberg.nl#Boodschappenlijst
       property Datum (Date)
 
   case Boodschappenlijst
-    thing Boodschappen (relational)
+    thing Boodschappen
       property Naam (String)
       property Aantal (Number)
     user Boodschapper = sys:SocialMe
