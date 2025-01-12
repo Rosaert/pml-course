@@ -1,9 +1,9 @@
 {-
 SCHERMEN, INSTANTIES EN ROLLEN
-(Als je model niet zonder problemen compileert, neem dan het onderstaande model over en probeer het opnieuw.)
+(Als je model niet zonder problemen compileert, neem dan de onderstaande versie over en probeer het opnieuw.)
 
 In een model beschrijven we types. Maar als je MyContexts opent, heb je vooral te maken met instanties. 
-Elk scherm geeft precies één context-instantie weer (en de rollen in die context). Maar je kunt een alleen een context openen als je een rol hebt.
+Elk scherm geeft precies één context-instantie weer (en de rollen in die context). Je kunt een alleen een context openen als je er een rol in hebt.
 
 Dus je kunt BoodschappenlijstenBeheer alleen openen als je de rol Beheerder hebt.
 En je kunt een Boodschappenlijst alleen openen als je de rol Boodschapper hebt.
@@ -19,7 +19,8 @@ je hebt bij verstek een rol in de contexten BoodschappenlijstenBeheer en Boodsch
 
 PREFIXES
 Je moest 'sys:SocialMe' intikken. Het 'sys' is een prefix. Het is een afkorting voor 'model://perspectives.domains#System', 
-het basissysteem van MyContexts. Dus 'sys:SocialMe' betekent 'model://perspectives.domains#System$SocialMe'.
+het basissysteem van MyContexts. Dus 'sys:SocialMe' betekent 'model://perspectives.domains#System$SocialMe'. 
+Die hele mond vol had je moeten intikken in het model als we geen prefixes hadden.
 
 Er is een aantal standaard prefixes dat je altijd kunt gebruiken. 'sys' is er een van. Je kunt ook een eigen prefix definiëren.
 Tik onder de regel 'domain model://joopringelberg.nl#Boodschappenlijst' de volgende regel:

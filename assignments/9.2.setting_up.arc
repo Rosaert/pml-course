@@ -7,8 +7,9 @@ Ik heb eerder aangegeven dat elke context en rol is ingebed in een context. Toen
 Als je een instantie van een context maakt, moet je aangeven in welke context die instantie moet worden aangemaakt.
 Oftewel, je moet een context altijd inbedden in een andere context - door een contextrol te gebruiken (een rol met sleutelwoord 'context').
 Dat doen we in de preambule inderdaad niet, althans niet in één keer. 
-Het gaat te ver om deze kwestie hier in detail uit te leggen.
-In plaats daarvan zullen we aangeven dat BoodschappenlijstenBeheer een RootContext is. Dat is een context die niet in een andere context is ingebed.
+Het gaat te ver om deze kwestie hier in detail uit te leggen. Later komen we hierop terug.
+In plaats daarvan zullen we, om de compiler tevreden te stellen, aangeven dat BoodschappenlijstenBeheer een RootContext is. 
+Dat is een context die niet in een andere context is ingebed.
 
 OPDRACHT
 Voeg de volgende regel toe direct onder de regel 'case BoodschappenlijstenBeheer':
@@ -17,7 +18,7 @@ Voeg de volgende regel toe direct onder de regel 'case BoodschappenlijstenBeheer
 
 Daarmee geef je aan dat BoodschappenlijstenBeheer een RootContext is. 
 
-Upload je model. Lees de feedback. Ga naar de volgende opdracht.
+Upload je model. Nu zou de compiler "OK" moeten zeggen. Ga naar de volgende opdracht.
 -}
 
 

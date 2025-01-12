@@ -7,13 +7,13 @@ waarmee je onder andere modellen kunt beheren.
 
 Hoe kunnen we het model Boodschappenlijst aan MyContexts toevoegen als een 'app'?
 We gaan daar stapsgewijs naartoe werken.
-De eerste stap is dat we ons afvragen hoe we de Beheerder van BoodschappenlijstenBeheer kunnen worden.
+De eerste stap is dat we moeten regelen dat we de Beheerder van BoodschappenlijstenBeheer kunnen worden.
 
 MyContexts draait op diverse modellen. Eén ervan is het System model. Dat model bevat een rol voor gebruikers van MyContexts / Perspectives: 
-de rol PerspectivesUsers. Neem op gezag aan dat als je MyContexts gebruikt, je vanzelf de rol PerspectivesUsers krijgt. Die heb je altijd: je hoeft
-er niets voor te doen.
+de rol PerspectivesUsers. Als je MyContexts gebruikt, krijg je die rol automatisch toebedeeld, het systeem maakt er een instantie voor aan. 
+Bovendien is er in de Perspectives Language een naam voor die instantie: sys:SocialMe.
 
-Zoals we contexten kunnen verbinden, zo kunnen we ook user rollen met elkaar verbinden. We kunnen daar ook het sleutelwoord 'filledBy' voor gebruiken,
+Zoals we contexten kunnen verbinden, zo kunnen we ook user rollen met elkaar verbinden. We kunnen ook daar het sleutelwoord 'filledBy' voor gebruiken,
 maar in eerste instantie volgen we een andere, eenvoudiger weg.
 
 OPDRACHT

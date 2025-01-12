@@ -1,5 +1,5 @@
 {-
-Je kunt nu een Boodschappenlijst maken en openen. Maar in Boodschappenlijst speelt hetzelfde probleem als we 
+Je kunt nu zoveel Boodschappenlijst maken en openen als je wilt. Maar in Boodschappenlijst speelt hetzelfde probleem als we 
 in BoodschappenlijstenBeheer tegenkwamen: de rol Boodschappen is functioneel, terwijl we meerdere boodschappen willen kunnen toevoegen.
 
 OPDRACHT

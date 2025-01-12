@@ -7,6 +7,7 @@ Doe dat door
 2. de publieke versie van het manifest te openen;
 3. versie 1.0 te selecteren;
 4. de actie StartUsing in het actie-menu van de versietabel te kiezen.
+(LET OP: je kunt StartUsing maar één keer toepassen. Als je het model actualiseert, moet je UpdateModel kiezen.)
 
 Navigeer dan naar de Home context en klik op de tab "Start Contexts". Daar zou je nu een context "Boodschappen lijsten" moeten zien. 
 Klik op de naam van die context om hem te openen. 
@@ -20,7 +21,8 @@ In plaats daarvan zien we een formulier met één veld, de datum. Misschien heb 
 onder het formuler. Je hebt dan gemerkt dat MyContexts meldt dat het geen context kan openen.
 
 FUNCTIONELE EN RELATIONELE ROLLEN
-Bij verstek is een rol 'functioneel'. Dat betekent dat er maar één instantie van die rol kan bestaan. Maar het hele punt van BoodschappenlijstenBeheer is dat er meerdere boodschappenlijsten kunnen zijn. 
+Bij verstek is een rol 'functioneel'. Dat betekent dat er maar één instantie van die rol kan bestaan. 
+Maar het hele punt van BoodschappenlijstenBeheer is dat er meerdere boodschappenlijsten kunnen zijn. 
 Daarom moeten we de rol 'Boodschappenlijsten' veranderen in een 'relationele' rol. 
 
 OPDRACHT

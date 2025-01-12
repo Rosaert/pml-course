@@ -9,8 +9,11 @@ In de loop van de cursus leer je alle benodigde technieken om dit te kunnen begr
 Je herinnert je nog wel dat het domein óók een context-type is. Als MyContext een model laadt, maakt het programma een instantie van 
 dat context-type aan (dat gebeurt namens jou, je hoeft er niets voor te doen).
 Het is mogelijk om in je model aan te geven dat iets moet gebeuren als een context of rol wordt aangemaakt.
-In de pre-ambule nemen we op dat er een instantie van BoodschappenlijstenBeheer moet worden aangemaakt als het model wordt geladen.
-Omdat je automatisch de Beheerder-rol hebt, kun je dan direct aan de slag.
+Die twee tellen bij elkaar op tot de mogelijkheid om iets automatisch te laten gebeuren als een model in gebruik wordt genomen in een MyContexts installatie.
+(LET OP: alleen de allereerste keer dat je een model in gebruik neemt, gebeurt dit. Als je een model actualiseert, gebeurt het niet.)
+
+In de pre-ambule nemen we daarom op dat er een instantie van BoodschappenlijstenBeheer moet worden aangemaakt als het model wordt geladen.
+Omdat je daarin automatisch de Beheerder-rol hebt, kun je dan direct aan de slag.
 
 OPDRACHT
 Neem het volgende fragment over in je model. Upload je model. Lees de feedback. Ga naar de volgende opdracht.
