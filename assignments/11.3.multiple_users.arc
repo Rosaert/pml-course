@@ -1,16 +1,17 @@
 {-
-Je kunt nu zoveel Boodschappenlijst maken en openen als je wilt. Maar in Boodschappenlijst speelt hetzelfde probleem als we 
-in BoodschappenlijstenBeheer tegenkwamen: de rol Boodschappen is functioneel, terwijl we meerdere boodschappen willen kunnen toevoegen.
+EEN GEBRUIKER HEEFT EEN PERSPECTIEF NODIG OM MEE TE DOEN
+Nu zou je verwachten dat de gebruiker (ook wel 'peer' genoemd) die je een rol hebt gegeven in Boodschappenlijst, 
+daar op de één of andere manier wat van zou merken. Maar dat is niet zo.
+
+De oorzaak daarvan is dat we nog niet hebben gemodelleerd dat Huisgenoot ook iets moet zien van Boodschappenlijst!
+Deze rol heeft immers geen perspectief op Boodschappenlijst.
+Dat gaan we nu veranderen.
 
 OPDRACHT
-Verander de rol 'Boodschappen' in een 'relationele' rol.
+Geef Huisgenoten een perspectief op Boodschappenlijst.
+Je kunt je daarbij laten leiden door het perspectief van Boodschapper op Boodschappen.
 
-Compileer het model, actualiseer het in gebruik genomen model en maak nu in een Boodschappenlijst twee Boodschappen aan: brood en melk.
-
-OPDRACHT
-De eerste instanties van de rol Boodschappen in BoodschappenlijstenBeheer zijn niet gevuld met een context. 
-Je hebt er niets aan. Verwijder ze (selecteer en klik op de backspace toets).
-
+Compileer het model en actualiseer het in gebruik genomen model.
 -}
 
 
@@ -49,10 +50,17 @@ domain model://joopringelberg.nl#Boodschappenlijst
       property Datum (Date)
 
   case Boodschappenlijst
-    thing Boodschappen
+    thing Boodschappen (relational)
       property Naam (String)
       property Aantal (Number)
     user Boodschapper = sys:SocialMe
       perspective on Boodschappen
         props (Naam, Aantal) verbs (Consult, SetPropertyValue)
         only (Create, Remove)
+      perspective on Huisgenoten
+        only (Create, Remove)
+        props (FirstName, LastName) verbs (Consult)
+      perspective on Contacten
+        props (FirstName, LastName) verbs (Consult)
+    user Huisgenoten (relational) filledBy sys:TheWorld$PerspectivesUsers
+    user Contacten = sys:TheWorld >> PerspectivesUsers

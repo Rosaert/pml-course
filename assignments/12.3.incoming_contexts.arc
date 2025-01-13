@@ -1,3 +1,40 @@
+{-
+EEN BINNENKOMENDE CONTEXT INHANGEN
+Even recapituleren:
+* als een peer een Boodschappenlijst binnenkrijgt, werd die nog niet in zijn eigen beheer-instantie gehangen.
+* we hebben inmiddels de beheer-instantie geïndexeerd met de naam bl:BoodschappenApp.
+* en we hebben ervoor gezorgd (door het model weg te gooien en opnieuw te installeren) dat in onze installaties die naam ook toegekend is aan de beheer-instantie.
+
+Nu moeten we ervoor zorgen dat een binnenkomende Boodschappenlijst ook in de eigen beheer-instantie wordt gehangen. Opnieuw moet je een stukje code toevoegen dat je nog
+niet helemaal begrijpt.
+
+OPDRACHT
+Voeg direct onder de declaratie van boodschappenlijst (d.w.z. de zin 'case Boodschappenlijst') de volgende regels toe:
+
+    external
+      state AddIncoming = not exists filter bl:BoodschappenApp with filledBy origin
+        perspective of Boodschapper
+          perspective on extern >> binder Boodschappenlijsten
+            only (Create, Fill, CreateAndFill)
+        on entry
+          do for Boodschapper
+            bind origin to Boodschappenlijsten in bl:BoodschappenApp
+
+Informele toelichting: als er nog geen Boodschappenlijst in de beheer-instantie zit die gevuld is door de binnenkomende context, dan moet de Boodschapper dat doen.
+En dat kan hij doen door de Boodschappenlijst te binden aan de Boodschappenlijsten in de beheer-instantie.
+Hij heeft daar wel een geschikt perspectief voor nodig, maar dat hoeft ie alleen maar in deze toestand te hebben.
+
+Compileer het model en actualiseer het in gebruik genomen model, in je eigen installatie en die van de peer.
+
+Maak dan in je eigen installatie een nieuwe Boodschappenlijst aan.
+Open hem en voeg de peer toe in de rol Huisgenoten.
+Voeg ook een boodschap toe en geef die een naam.
+Als alles is gelukt, zie je nu in de peer-installatie de lijst en de boodschap verschijnen.
+-}
+
+-------------------------------------------------------------------------------
+-- MODEL TOT NOG TOE
+-------------------------------------------------------------------------------
 -- Firstname Lastname. mm/dd/yyyy.
 domain model://joopringelberg.nl#Boodschappenlijst
   use bl for model://joopringelberg.nl#Boodschappenlijst

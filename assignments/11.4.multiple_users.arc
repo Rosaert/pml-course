@@ -1,3 +1,27 @@
+{-
+MEER PERSPECTIEVEN VOOR HUISGENOTEN
+Mocht je inderdaad een peer hebben toegevoegd als huisgenoot, dan zou je verwachten dat die peer inmiddels wel iets zou zien.
+Maar dat is nog steeds niet zo. Het inlezen van een nieuwe versie van het model verandert niet iets aan de bestaande situatie.
+Pas als je opnieuw veranderingen aanbrengt, gaat het nieuwe model werken. 
+Dus als je nu een nieuwe huisgenoot toevoeg (of je gooit de vorige versie weg en maakt hem opnieuw), wordt die huisgenoot op de hoogte gesteld.
+Overigens is dat alleen als er daadwerkelijk iets in de Boodschappenlijst staat!
+We hebben immers alleen een perspectief op de lijst zelf gegeven.
+Om ook een lege Boodschappenlijst zichtbaar te maken, moeten we de Huisgenoot meer perspectieven geven.
+Bijvoorbeeld op de Boodschapper.
+Of op de Huisgenoten.
+
+OPDRACHT
+Voeg voor Huisgenoten twee perspectieven toe. Van de Boodschapper moet hij voor- en achternaam kunnen zien en van de Huisgenoten ook.
+Er zijn geen rol-werkwoorden nodig: alleen de Boodschapper mag Huisgenoten toevoegen.
+
+Compileer het model en ga naar de volgende opdracht (je hoeft nog niet te actualiseren, want er zal nog geen verschil te zien zijn in MyContexts).
+
+-}
+
+
+-------------------------------------------------------------------------------
+-- MODEL TOT NOG TOE
+-------------------------------------------------------------------------------
 -- Firstname Lastname. mm/dd/yyyy.
 domain model://joopringelberg.nl#Boodschappenlijst
   use bl for model://joopringelberg.nl#Boodschappenlijst
@@ -14,14 +38,6 @@ domain model://joopringelberg.nl#Boodschappenlijst
         in
           bind_ app >> extern to start
           Name = "Boodschappen lijsten" for start
-  on exit
-    do for sys:PerspectivesSystem$Installer
-      letA
-        indexedcontext <- filter sys:MySystem >> IndexedContexts with filledBy (bl:BoodschappenApp >> extern)
-        startcontext <- filter sys:MySystem >> StartContexts with filledBy (bl:BoodschappenApp >> extern)
-      in
-        remove context indexedcontext
-        remove role startcontext
 
   aspect user sys:PerspectivesSystem$Installer  
   -------------------------------------------------------------------------------
@@ -29,7 +45,6 @@ domain model://joopringelberg.nl#Boodschappenlijst
   -------------------------------------------------------------------------------
   
   case BoodschappenlijstenBeheer
-    indexed bl:BoodschappenApp
     aspect sys:RootContext
     user Beheerder = sys:SocialMe
       perspective on Boodschappenlijsten
@@ -39,14 +54,6 @@ domain model://joopringelberg.nl#Boodschappenlijst
       property Datum (Date)
 
   case Boodschappenlijst
-    external
-      state AddIncoming = not exists filter bl:BoodschappenApp with filledBy origin
-        perspective of Boodschapper
-          perspective on extern >> binder Boodschappenlijsten
-            only (Create, Fill, CreateAndFill)
-        on entry
-          do for Boodschapper
-            bind origin to Boodschappenlijsten in bl:BoodschappenApp
     thing Boodschappen (relational)
       property Naam (String)
       property Aantal (Number)
@@ -63,8 +70,4 @@ domain model://joopringelberg.nl#Boodschappenlijst
       perspective on Boodschappen
         props (Naam, Aantal) verbs (Consult, SetPropertyValue)
         only (Create, Remove)
-      perspective on Boodschapper
-        props (FirstName, LastName) verbs (Consult)
-      perspective on Huisgenoten 
-        props (FirstName, LastName) verbs (Consult)
     user Contacten = sys:TheWorld >> PerspectivesUsers

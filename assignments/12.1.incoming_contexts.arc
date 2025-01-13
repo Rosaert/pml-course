@@ -1,3 +1,37 @@
+{-
+BINNENKOMENDE CONTEXTEN
+Met het model zoals we dat nu hebben gemaakt, ontvangt een peer die tot Huisgenoot is gemaakt, de betreffende Boodschappenlijst.
+Maar hij zal hem niet kunnen opzoeken.
+
+In opdracht 9.1 hebben we het model zo gemaakt, dat bij in gebruik nemen automatisch een instantie van BoodschappenlijstenBeheer wordt aangemaakt.
+Dus: als jij het model in gebruik neemt, krijg je zo'n beheer-instantie.
+En als je peer het model in gebruik neemt, krijgt hij ook zo'n instantie. MAAR DAT IS ZIJN EIGEN INSTANTIE - een andere dan die van jou!
+
+Als jouw peer in MyContexts naar Mijn Boodschappen gaat, ziet hij dus zijn eigen beheer-instantie. En die is leeg.
+Want als jij een Boodschappenlijst aanmaakt, gebeurt dat in jouw instantie, niet in die van je peer.
+
+Weliswaar ontvangt je peer (met een rol in boodschappenlijst X) de Boodschappenlijst X, maar hij is niet ingebed in zijn eigen beheer-instantie.
+Dat gaan we nu regelen en dat vergt twee stappen.
+
+GEINDEXEERDE CONTEXTEN
+Denk eens na over het woord 'thuis'. Het betekent voor iedereen een ander huis (een ander adres). Toch is er geen verwarring als we het woord gebruiken.
+Als een collega zegt: "Ik ben thuis", dan weet je dat hij in zijn eigen huis is, niet in dat van jou.
+In de Perspectives Language gebruiken we ook geïndexeerde contexten. Dat zijn contexten die voor iedereen een andere instantie hebben. 
+
+OPDRACHT
+In BoodschappenlijstenBeheer schrijf je boven de aspect regel:
+
+  indexed bl:BoodschappenApp
+
+Compileer het model.
+
+-}
+
+
+
+-------------------------------------------------------------------------------
+-- MODEL TOT NOG TOE
+-------------------------------------------------------------------------------
 -- Firstname Lastname. mm/dd/yyyy.
 domain model://joopringelberg.nl#Boodschappenlijst
   use bl for model://joopringelberg.nl#Boodschappenlijst
@@ -14,14 +48,6 @@ domain model://joopringelberg.nl#Boodschappenlijst
         in
           bind_ app >> extern to start
           Name = "Boodschappen lijsten" for start
-  on exit
-    do for sys:PerspectivesSystem$Installer
-      letA
-        indexedcontext <- filter sys:MySystem >> IndexedContexts with filledBy (bl:BoodschappenApp >> extern)
-        startcontext <- filter sys:MySystem >> StartContexts with filledBy (bl:BoodschappenApp >> extern)
-      in
-        remove context indexedcontext
-        remove role startcontext
 
   aspect user sys:PerspectivesSystem$Installer  
   -------------------------------------------------------------------------------
@@ -29,7 +55,6 @@ domain model://joopringelberg.nl#Boodschappenlijst
   -------------------------------------------------------------------------------
   
   case BoodschappenlijstenBeheer
-    indexed bl:BoodschappenApp
     aspect sys:RootContext
     user Beheerder = sys:SocialMe
       perspective on Boodschappenlijsten
@@ -39,14 +64,6 @@ domain model://joopringelberg.nl#Boodschappenlijst
       property Datum (Date)
 
   case Boodschappenlijst
-    external
-      state AddIncoming = not exists filter bl:BoodschappenApp with filledBy origin
-        perspective of Boodschapper
-          perspective on extern >> binder Boodschappenlijsten
-            only (Create, Fill, CreateAndFill)
-        on entry
-          do for Boodschapper
-            bind origin to Boodschappenlijsten in bl:BoodschappenApp
     thing Boodschappen (relational)
       property Naam (String)
       property Aantal (Number)
