@@ -3,7 +3,13 @@ MEER PERSPECTIEVEN VOOR HUISGENOTEN
 Mocht je inderdaad een peer hebben toegevoegd als huisgenoot, dan zou je verwachten dat die peer inmiddels wel iets zou zien.
 Maar dat is nog steeds niet zo. Het inlezen van een nieuwe versie van het model verandert niet iets aan de bestaande situatie.
 Pas als je opnieuw veranderingen aanbrengt, gaat het nieuwe model werken. 
-Dus als je nu een nieuwe huisgenoot toevoeg (of je gooit de vorige versie weg en maakt hem opnieuw), wordt die huisgenoot op de hoogte gesteld.
+
+-------------------------------------------------------------------------------
+INVARIANT: het actualiseren van een model leidt niet tot verandering van de bestaande situatie. Er worden geen contexten of rollen gemaakt of verwijderd.
+Peers worden niet op de hoogte gesteld als ze een nieuw of uitgebreid perspectief krijgen.
+-------------------------------------------------------------------------------
+
+Dus als je nu een nieuwe huisgenoot toevoegt (of je gooit de vorige versie weg en maakt hem opnieuw), wordt die huisgenoot op de hoogte gesteld.
 Overigens is dat alleen als er daadwerkelijk iets in de Boodschappenlijst staat!
 We hebben immers alleen een perspectief op de lijst zelf gegeven.
 Om ook een lege Boodschappenlijst zichtbaar te maken, moeten we de Huisgenoot meer perspectieven geven.

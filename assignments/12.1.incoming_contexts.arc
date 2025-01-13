@@ -10,8 +10,8 @@ En als je peer het model in gebruik neemt, krijgt hij ook zo'n instantie. MAAR D
 Als jouw peer in MyContexts naar Mijn Boodschappen gaat, ziet hij dus zijn eigen beheer-instantie. En die is leeg.
 Want als jij een Boodschappenlijst aanmaakt, gebeurt dat in jouw instantie, niet in die van je peer.
 
-Weliswaar ontvangt je peer (met een rol in boodschappenlijst X) de Boodschappenlijst X, maar hij is niet ingebed in zijn eigen beheer-instantie.
-Dat gaan we nu regelen en dat vergt twee stappen.
+Weliswaar ontvangt je peer (als hij een rol in boodschappenlijst X heeft) de Boodschappenlijst X, maar die is niet ingebed in zijn eigen (die van de peer) beheer-instantie.
+Dat gaan we nu regelen en dat vergt twee stappen. De eerste stap zetten we hier; de tweede in de volgende opdracht.
 
 GEINDEXEERDE CONTEXTEN
 Denk eens na over het woord 'thuis'. Het betekent voor iedereen een ander huis (een ander adres). Toch is er geen verwarring als we het woord gebruiken.
@@ -24,6 +24,8 @@ In BoodschappenlijstenBeheer schrijf je boven de aspect regel:
   indexed bl:BoodschappenApp
 
 Compileer het model.
+
+De naam BoodschappenApp (in de namespace van het model) wijst in elke installatie naar een andere instantie van BoodschappenlijstenBeheer.
 
 -}
 

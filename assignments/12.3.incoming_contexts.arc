@@ -5,11 +5,11 @@ Even recapituleren:
 * we hebben inmiddels de beheer-instantie geïndexeerd met de naam bl:BoodschappenApp.
 * en we hebben ervoor gezorgd (door het model weg te gooien en opnieuw te installeren) dat in onze installaties die naam ook toegekend is aan de beheer-instantie.
 
-Nu moeten we ervoor zorgen dat een binnenkomende Boodschappenlijst ook in de eigen beheer-instantie wordt gehangen. Opnieuw moet je een stukje code toevoegen dat je nog
-niet helemaal begrijpt.
+Nu moeten we ervoor zorgen dat een binnenkomende Boodschappenlijst ook in de eigen beheer-instantie wordt gehangen. Opnieuw moet je een stukje code toevoegen dat je 
+waarschijnlijk nog niet helemaal begrijpt.
 
 OPDRACHT
-Voeg direct onder de declaratie van boodschappenlijst (d.w.z. de zin 'case Boodschappenlijst') de volgende regels toe:
+Voeg direct onder de declaratie van boodschappenlijst (d.w.z. de zin 'case Boodschappenlijst') de volgende regels toe (met ten opzichte van 'case' een indentatie):
 
     external
       state AddIncoming = not exists filter bl:BoodschappenApp with filledBy origin
@@ -21,7 +21,7 @@ Voeg direct onder de declaratie van boodschappenlijst (d.w.z. de zin 'case Boods
             bind origin to Boodschappenlijsten in bl:BoodschappenApp
 
 Informele toelichting: als er nog geen Boodschappenlijst in de beheer-instantie zit die gevuld is door de binnenkomende context, dan moet de Boodschapper dat doen.
-En dat kan hij doen door de Boodschappenlijst te binden aan de Boodschappenlijsten in de beheer-instantie.
+En dat kan hij doen door de een instantie van Boodschappenlijsten in de beheer-instantie te maken en te vullen met een Boodschappenlijst.
 Hij heeft daar wel een geschikt perspectief voor nodig, maar dat hoeft ie alleen maar in deze toestand te hebben.
 
 Compileer het model en actualiseer het in gebruik genomen model, in je eigen installatie en die van de peer.

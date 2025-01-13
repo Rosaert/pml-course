@@ -15,7 +15,7 @@ Maar als je het model verwijdert, blijft de instantie van 'StartContexts' bestaa
 Daarom moeten we in de pre-ambule een aantal regels toevoegen die ervoor zorgen dat die instantie wordt verwijderd.
 
 OPDRACHT
-In de pre-ambule moet je een aantal regels toevoegen. Ik leg ze niet in detail, dat komt later. Neem ze gewoon over:
+Voeg onderstaande regels aan de pre-ambule toe. Ik leg ze niet in detail, dat komt later. Neem ze gewoon over:
 
   on exit
     do for sys:PerspectivesSystem$Installer

@@ -28,11 +28,11 @@ user Contacten = sys:TheWorld >> PerspectivesUsers
 5. Compileer het model en actualiseer het in gebruik genomen model. 
     Ga naar Boodschappenlijst en kijk of je de tab Contacten ziet. 
     Klik op de tab en kijk of je een lijst van MyContexts gebruikers ziet.
-    Selecteer er één (niet jezelf) en sla ctrl-c aan. Deze rol verschijnt nu op het clipboard.
+    Selecteer er één (niet jezelf; bij voorkeur de peer die je hebt opgezet om te testen) en sla ctrl-c aan. Deze rol verschijnt nu op het clipboard.
     Klik op de tab Huisgenoten.
     Klik op de + button om een nieuwe huisgenoot instantie toe te voegen.
     Merk op dat een clipboard button verschijnt. Beweeg de muis erboven en lees de popup-tekst.
-    klik op de clipboard button en de instantie van de geselecteerde gebruiker vult nu de nieuwe Huisgenoten instantie.
+    Klik op de clipboard button en de instantie van de geselecteerde gebruiker vult nu de nieuwe Huisgenoten instantie.
     Je ziet nu zijn voor- en achternaam.
 
 Ga naar de volgende opdracht.

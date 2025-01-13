@@ -1,7 +1,7 @@
 {-
 ROOT CONTEXTEN
 Het zal je zijn opgevallen dat de compiler een foutmelding geeft. De strekking daarvan is dat je zou proberen om 
-een instantie van BoodschappenlijstenBeheer aan te maken, maar dat type geen 'RootContext' is.
+een instantie van BoodschappenlijstenBeheer aan te maken, maar dat BoodschappenlijstenBeheer geen 'RootContext' is.
 
 Ik heb eerder aangegeven dat elke context en rol is ingebed in een context. Toen had ik het over types, maar hetzelfde geldt voor instanties.
 Als je een instantie van een context maakt, moet je aangeven in welke context die instantie moet worden aangemaakt.

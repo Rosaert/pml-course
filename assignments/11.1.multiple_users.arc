@@ -7,10 +7,10 @@ Nu gaan we het model aanpassen voor een situatie van meerdere mensen die een gez
 We beschouwen de rol Boodschapper als degene die de boodschappen doet. Daarnaast maken we een nieuwe rol aan voor huisgenoten die wel items op 
 de lijst kunnen zetten, maar niet de boodschappen doen. We noemen deze rol Huisgenoten.
 
-CONVENTIE: een relationele rol geven we een naam die een meervoud aangeeft.
+CONVENTIE: een relationele rol geven we een naam die een meervoud aangeeft. Dus niet Huisgenoot, maar Huisgenoten.
 
 TWEEDE TESTINSTALLATIE
-Het is handig, als je een tweede installatie maakt die je kunt gebruiken als peer om mee te testen.
+Het is handig om een tweede installatie te maken die je kunt gebruiken als peer om mee te testen.
 Ik leg het hier niet in detail uit, maar je kunt in Chrome een profile aanmaken en daarin opnieuw installeren.
 Je moet wel die tweede installatie verbinden met je ontwikkelinstallatie, door een uitnodiging te sturen.
 In het vervolg ga ik ervan uit dat je dat gedaan hebt. Als ik het over 'een peer' heb, bedoel ik die tweede installatie.
